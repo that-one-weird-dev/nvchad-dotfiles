@@ -27,6 +27,9 @@ map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "Window right" })
 map("n", "<leader>s%", "<cmd>source %<CR>", { desc = "source %" })
 
 -- Lsp
+map("n", "<leader>lf", function()
+    vim.diagnostic.open_float()
+end)
 map("n", "<leader>la", function()
 	require("tiny-code-action").code_action()
 end)
