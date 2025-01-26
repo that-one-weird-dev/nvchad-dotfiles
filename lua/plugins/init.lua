@@ -14,6 +14,7 @@ return {
             require('tiny-code-action').setup()
         end
     },
+    { "tpope/vim-fugitive" },
 
     -- Lsp
     { "Decodetalkers/csharpls-extended-lsp.nvim" },
