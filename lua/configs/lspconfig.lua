@@ -17,8 +17,9 @@ local servers = {
   "luau_lsp",
   "zls",
   "ols",
-  "glsl_analyzer",
+  "wgsl_analyzer",
 }
+
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
