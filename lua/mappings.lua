@@ -38,3 +38,6 @@ map("n", "<leader>th", function()
         style = "flat"
     })
 end)
+
+-- Funny
+map("n", "<leader>sdn!", "<cmd>!shutdown now<CR>", { desc = "Shutdown entire system" })

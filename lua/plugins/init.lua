@@ -18,6 +18,13 @@ return {
         "tpope/vim-fugitive",
         lazy = false,
     },
+    {
+        "supermaven-inc/supermaven-nvim",
+        lazy = false,
+        config = function()
+            require("supermaven-nvim").setup({})
+        end,
+    },
 
     -- Lsp
     { "Decodetalkers/csharpls-extended-lsp.nvim" },
@@ -61,6 +68,17 @@ return {
         opts = function(_, conf)
             conf.mapping["<C-k>"] = require("cmp").mapping.select_prev_item()
             conf.mapping["<C-j>"] = require("cmp").mapping.select_next_item()
+
+            return conf
+        end,
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = function(_, conf)
+            conf.filters = {
+                dotfiles = false,
+                custom = { "*.uid" },
+            }
 
             return conf
         end,
