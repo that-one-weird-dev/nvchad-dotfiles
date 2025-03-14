@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.expandtab = false
     end,
 })
+
+local function respace()
+    vim.cmd(":%s/    /\t/g")
+end
+
+vim.api.nvim_create_user_command('Respace', respace, {})
+vim.api.nvim_create_user_command('Res', respace, {})
