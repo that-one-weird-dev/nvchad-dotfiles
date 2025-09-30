@@ -1,8 +1,23 @@
 return {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    css = { "prettier" },
+    html = { "prettier" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    tsx = { "prettier" },
+    cs = { "csharpier" },
+  },
+
+  formatters = {
+    csharpier = {
+      command = "csharpier",
+      args = {
+        "format",
+        "--write-stdout",
+      },
+      to_stdin = true,
+    }
   },
 
   -- format_on_save = {

@@ -18,6 +18,24 @@ return {
         "tpope/vim-fugitive",
         lazy = false,
     },
+
+    -- Lsp
+    { "Decodetalkers/csharpls-extended-lsp.nvim" },
+
+    -- AI
+    -- {
+    --     "yetone/avante.nvim",
+    --     events = "VeryLazy",
+    --     version = false,
+    --     lazy = false,
+    --     opts = require("configs.avante"),
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "MunifTanjim/nui.nvim",
+    --         "nvim-telescope/telescope.nvim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    -- },
     {
         "supermaven-inc/supermaven-nvim",
         lazy = false,
@@ -25,9 +43,6 @@ return {
             require("supermaven-nvim").setup({})
         end,
     },
-
-    -- Lsp
-    { "Decodetalkers/csharpls-extended-lsp.nvim" },
 
     -- Overrides
     {

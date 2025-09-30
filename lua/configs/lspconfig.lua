@@ -3,7 +3,6 @@ require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 
--- EXAMPLE
 local servers = {
   "html",
   "cssls",
@@ -18,6 +17,11 @@ local servers = {
   "zls",
   "ols",
   "wgsl_analyzer",
+  "hyprls",
+  "taplo",
+  "csharp_ls",
+  "slangd",
+  "ols",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -31,11 +35,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.csharp_ls.setup {
+require("csharpls_extended").buf_read_cmd_bind()
+
+lspconfig.qmlls.setup {
   on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  handlers = {
-    ["textDocument/definition"] = require("csharpls_extended").handler,
-    ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
-  },
+  cmd = { "qmlls", "-E" },
 }
