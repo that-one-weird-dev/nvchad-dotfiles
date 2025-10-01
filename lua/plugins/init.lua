@@ -68,12 +68,17 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         opts = function(_, conf)
-            conf.defaults.mappings.i = {
-                ["<C-j>"] = require("telescope.actions").move_selection_next,
-                ["<C-k>"] = require("telescope.actions").move_selection_previous,
-                ["<Esc>"] = require("telescope.actions").close,
-                ["jk"] = require("telescope.actions").close,
-            }
+            conf.defaults = vim.tbl_deep_extend('force', conf.defaults or {}, {
+                mappings = {
+                    i = {
+                        ["<C-j>"] = require("telescope.actions").move_selection_next,
+                        ["<C-k>"] = require("telescope.actions").move_selection_previous,
+                        ["<Esc>"] = require("telescope.actions").close,
+                        ["jk"] = require("telescope.actions").close,
+                    }
+                },
+                file_ignore_patterns = { "%.tres", "%.tscn", "%.uid", "%.import", "%.png", "%.glb" }
+            })
 
             return conf
         end,
